@@ -2,14 +2,25 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  const col1Buttons = [
+    ['7', '8', '9'],
+    ['4', '5', '6'],
+    ['1', '2', '3'],
+    [',', '0', '=']
+  ]
   return (
     <View style={styles.container}>
       <Text style={styles.display}>Display</Text>
       <Text style={styles.result}>Result</Text>
       <View style={styles.buttons}>
           <View style={styles.col1}>
-            <Text>Col1</Text>
-          </View>
+          { col1Buttons.map( line => <View style={styles.line}>
+            <Text style={styles.btn}>Col1</Text>
+            <Text style={styles.btn}>Col1</Text>
+            <Text style={styles.btn}>Col1</Text>
+            </View>
+          ) }
+            </View>
         <View style={styles.col2}>
           <Text>Col2</Text>
         </View>
@@ -53,5 +64,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'red',
   },
-
+  line:{
+    flex: 1,
+    flexDirection: 'row',
+  },
+  btn:{
+    flex: 1
+  }
 }); 
