@@ -15,9 +15,7 @@ export default function App() {
       <View style={styles.buttons}>
           <View style={styles.col1}>
           { col1Buttons.map( line => <View style={styles.line}>
-            <Text style={styles.btn}>Col1</Text>
-            <Text style={styles.btn}>Col1</Text>
-            <Text style={styles.btn}>Col1</Text>
+           { line.map( op => <Text style={styles.btn}>Col1</Text>)}
             </View>
           ) }
             </View>
