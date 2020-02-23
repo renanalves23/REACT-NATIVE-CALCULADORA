@@ -14,8 +14,8 @@ export default function App() {
       <Text style={styles.result}>Result</Text>
       <View style={styles.buttons}>
           <View style={styles.col1}>
-          { col1Buttons.map( line => <View style={styles.line}>
-           { line.map( op => <Text style={styles.btn}>Col1</Text>)}
+          { col1Buttons.map( (line, ind) => <View key={ind} style={styles.line}>
+              { line.map( op => <Text key={op} style={styles.btn}>{op}</Text>)}
             </View>
           ) }
             </View>
