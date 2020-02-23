@@ -8,6 +8,7 @@ export default function App() {
     ['1', '2', '3'],
     [',', '0', '=']
   ]
+  const col2Buttons = ['C', '÷', 'x', '-', '+']
   return (
     <View style={styles.container}>
       <Text style={styles.display}>Display</Text>
@@ -15,15 +16,23 @@ export default function App() {
       <View style={styles.buttons}>
           <View style={styles.col1}>
           { col1Buttons.map( (line, ind) => <View key={ind} style={styles.line}>
-              { line.map( op => <Text key={op} style={styles.btn}>{op}</Text>)}
+              { line.map( op => <View key={op} style={styles.btn}> 
+                 <Text style={styles.btnText}>
+                   {op}
+                 </Text>
+                 </View>)}
             </View>
           ) }
             </View>
         <View style={styles.col2}>
-          <Text>Col2</Text>
+          { col2Buttons.map( op => <View key={op} style={styles.btn}> 
+            <Text style={styles.btnText}>
+              {op}
+            </Text>
+            </View>)}
+          </View>
         </View>
       </View>
-    </View>
   );
 }
 
@@ -67,6 +76,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   btn:{
-    flex: 1
+    flex: 1,
+    justifyContent: 'center'
+  },
+  btnText:{
+    textAlign: 'center',
+    fontSize: 50,
+
   }
 }); 
