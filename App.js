@@ -16,7 +16,7 @@ export default class App extends Component {
         result: ''
       })
     }else if(op==='='){
-      his.setState({
+      this.setState({
         display: this.state.result,
         result: ''
       })
@@ -54,7 +54,12 @@ export default class App extends Component {
       <View style={styles.buttons}>
           <View style={styles.col1}>
           { col1Buttons.map( (line, ind) => <View key={ind} style={styles.line}>
-              { line.map( op => <TouchableOpacity key={op} style={styles.btn} onPress={() => this.handleOp(op)}> 
+              { line.map( op => 
+                <TouchableOpacity 
+                  key={op} 
+                  style={styles.btn} 
+                  onPress={() => this.handleOp(op)}
+                  > 
                  <Text style={styles.btnText}>
                    {op}
                  </Text>
@@ -63,7 +68,13 @@ export default class App extends Component {
           ) }
             </View>
         <View style={styles.col2}>
-          { col2Buttons.map( op => <TouchableOpacity key={op} style={styles.btn} onPress={() => this.handleOp(op)}> 
+          { col2Buttons.map( op => 
+            <TouchableOpacity 
+            key={op} 
+            style={styles.btn} 
+            onPress={() => this.handleOp(op)}
+            > 
+
             <Text style={styles.btnText2}>
               {op}
             </Text>
