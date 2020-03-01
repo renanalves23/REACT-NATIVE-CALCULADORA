@@ -1,7 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+export default class App extends Component {
+  constructor(props){
+    super()
+    this.state = {
+      display: '',
+      result: ''
+    }
+  }
+  handleOp(op){
+    this.setState({
+      display: this.setState.display+op
+    })
+  }
+
+  render() {
   const col1Buttons = [
     ['7', '8', '9'],
     ['4', '5', '6'],
@@ -33,7 +47,7 @@ export default function App() {
           </View>
         </View>
       </View>
-  );
+  )};
 }
 
 const styles = StyleSheet.create({
